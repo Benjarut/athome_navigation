@@ -1,13 +1,13 @@
 <launch>
   <!--- Run move_base -->
-  <include file="$(find athome_navigation_dynamic)/launch/move_base.launch" />
-
-  <!--- Run rviz -->
-  <include file="$(find athome_navigation_dynamic)/launch/rviz_move_base.launch" />
+  <!--<include file="$(find athome_navigation_dynamic)/launch/includes/move_base.launch.xml" /> -->
 
   <!--- Run Mapping -->
-  <include file="$(find athome_navigation_mapping)/launch/gmapping.launch" />
-  
+  <include file="$(find athome_navigation_dynamic)/launch/gmapping_demo.launch" />
+
+  <!--- Run rviz -->
+  <include file="$(find athome_navigation_dynamic)/launch/navigation_rviz.launch" />
+
   <!--- Run AMCL -->
   <!--<include file="$(find athome_navigation_dynamic)/launch/amcl_node.launch" /> -->
 
