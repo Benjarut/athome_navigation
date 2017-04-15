@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/$(arg 3d_sensor)_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+  
+  <!-- Run the map server -->
+  <node ns="navigation" name="map_server" pkg="map_server" type="map_server" args="$(find athome_navigation_mapping)/maps/8th_floor.yaml"/>
+ 
+  <!--- Run AMCL -->
+  <include file="$(find athome_navigation)/launch/amcl_demo.launch" />
+  
+  <!--- Run rviz -->
+  <include file="$(find athome_navigation)/launch/view_navigation.launch" />
+
+  <!--- Create log file -->
+  <!-- <node ns="athome_log" pkg="rosbag" type="record" name="logging_navigation" args="-o navigation /laser/scan /kinect/virtual_scan /navigation/initial_pose /base/odom /navigation/move_base/goal " /> -->
+  <node ns="athome_log" pkg="rosbag" type="record" name="logging_navigation" args="-o log/athome_navigation --node /rviz/move_base_rviz" />
+
+</launch>
