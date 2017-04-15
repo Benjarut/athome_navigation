@@ -1,7 +1,7 @@
 <launch>
   <!--<include file="$(find hardware_bridge)/launch/base_connect.launch"/>-->
 
-  <node pkg="rviz" type="rviz" name="rviz_mapping" args="-d $(find athome_navigation_config)/rviz/map_construct.rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz_mapping" args="-d $(find athome_navigation_config)/rviz/navigation.rviz"/>
 
-  <include file="$(find athome_navigation_mapping)/launch/gmapping.launch"/>
+  <include file="$(find athome_navigation_mapping)/launch/gmapping_demo.launch"/>
 </launch>

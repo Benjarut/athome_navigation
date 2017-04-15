@@ -1,4 +1,5 @@
 <launch>
+
   <node ns="mapping" pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
     <remap from="scan" to="/laser/scan"/>
 
