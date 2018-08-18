@@ -22,7 +22,7 @@
   -->
   <include file="$(find rtabmap_ros)/launch/demo/demo_turtlebot_rviz.launch"/>
 
-  <arg name="database_path"     default="~/.ros/rtabmap2.db"/>
+  <arg name="database_path"     default="~/.ros/rtabmap.db"/>
   <arg name="localization"      default="false"/>
   <arg name="rgbd_odometry"     default="false"/>
   <arg name="args"              default=""/>
