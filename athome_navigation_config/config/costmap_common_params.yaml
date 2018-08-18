@@ -12,11 +12,11 @@ max_obstacle_height: 2.0
 raytrace_range: 3.0
 
 #The footprint of the robot and associated padding
-footprint: [[0.30, 0.23], [-0.30, 0.23], [-0.3, -0.23], [0.3, -0.23]]
+footprint: [[0.23, 0.20], [-0.23, 0.20], [-0.23, -0.20], [0.23, -0.20]]
 footprint_padding: 0.03
 
 #Cost function parameters
-inflation_radius: 0.4
+inflation_radius: 0.3
 cost_scaling_factor: 10.0
 
 observation_sources: base_scan #virtual_scan # tilt_scan ground_object_cloud
